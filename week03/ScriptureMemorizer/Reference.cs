@@ -1,6 +1,7 @@
 using System;
 
 public class Reference
+//Keeps track of the book, chapter, and verse information.
 {
     
     private string _book;
@@ -8,17 +9,65 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    public void Reference(string book, int chapter, int verse)
+   
+    public Reference(string book, int chapter, int verse)
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = 0;
     }
-    public void Reference(string book, int chapter, int startVerse, int endVerse)
+    public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _verse = startVerse;
+        _endVerse = endVerse;
     }
-    public void GetDisplayText()
+
+    public string GetBook()
     {
-        
+        return _book;
+    }
+    public void SetBook(string book)
+    {
+        _book = book;
+    }
+    public int GetChapter()
+    {
+        return _chapter;
+    }
+    public void SetChapter(int chapter)
+    {
+        _chapter = chapter;
+    }
+    public int GetVerse()
+    {
+        return _verse;
+    }
+     public void SetVerse(int verse)
+    {
+        _verse = verse;
+    }
+    public int GetEndVerse()
+    {
+        return _endVerse;
+    }
+    public void SetEndVerse(int endVerse)
+    {
+        _endVerse = endVerse;
+    }
+    public string GetDisplayText()
+    {
+        if (_endVerse == 0)
+        {
+            return $"{_book} {_chapter} {_verse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
+           
     }
 
 
