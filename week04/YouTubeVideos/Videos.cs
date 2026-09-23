@@ -15,28 +15,30 @@ public class Video
     
     
 
-    public Video(string title, string author, double length, string comment)
+    public Video(string title, string author, double length)
     {
         _title = title;
         _author = author;
         _length = length;
-        _comments = comment;
     }
-    public void AddComment(Comment comment)
+    public void AddComment(Comment newComment)
     {
-        _comments.Add(comment);
+        _comments.Add(newComment);
     }
 
-    public void Display()
-    {
-        Console.WriteLine($"Title: {_title} \nAuthor: {_author} \nLength: {_length} Seconds");
-    }
+    
     
     public void DisplayAll()
     {
+        if (_comments.Count == 0)
+        {
+            Console.WriteLine("There are no comments available.");
+            return;
+        }
+        Console.WriteLine($"Title: {_title} \nAuthor: {_author} \nLength: {_length} Seconds");
         foreach (Comment comment in _comments)
         {
-            Console.Clear();
+            
             comment.Display();
             Console.WriteLine();
         }

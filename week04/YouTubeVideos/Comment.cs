@@ -17,6 +17,6 @@ public class Comment
 
     public void Display()//I think I should replace this with code that passes the _name/_text over to Videos.cs...
     {
-        Console.WriteLine($"@{_name} \nComment: {_text}");
+        Console.WriteLine($"Commenter: @{_name} \nComment: {_text}");
     }
 }

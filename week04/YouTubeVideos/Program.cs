@@ -7,14 +7,14 @@
 
 
 using System;
-using system.Collections.Generic;
+using System.Collections.Generic;
 
 
 class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video("Bread Making Tutorial", "@Jim Bean", 180);
+        Video video1 = new Video("Bread Making Tutorial", "@Mr Bean", 180);
         Video video2 = new Video("MAPHRA-Doomed", "@MAPHRAMusic", 266);
         Video video3 = new Video("DIY Garage Shelf", "@Greg's Garage", 1440);
         Video video4 = new Video("New Set Just Dropped", "@GameKinghts", 3120);
@@ -29,6 +29,11 @@ class Program
         video3.AddComment(comment3);
         video4.AddComment(comment4);
         
-        Console.writeline(video1);
+        Console.Clear();
+        
+        video1.DisplayAll();
+        video2.DisplayAll();
+        video3.DisplayAll();
+        video4.DisplayAll();
     }
 }
