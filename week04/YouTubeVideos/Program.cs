@@ -19,15 +19,37 @@ class Program
         Video video3 = new Video("DIY Garage Shelf", "@Greg's Garage", 1440);
         Video video4 = new Video("New Set Just Dropped", "@GameKinghts", 3120);
        
-        Comment comment1 = new Comment("Sam Owens", "Video was very instructive, can't wait to make bread!");
-        Comment comment2 = new Comment("Billy Bob", "She has such an extraordinary voice!");
-        Comment comment3 = new Comment("Bob's Basement", "I think I could make a much better shelf in my basement!");
-        Comment comment4 = new Comment("MTG Nerd", "Can't wait to get this set, it looks so cool!");
+        Comment commentBread1 = new Comment("Sam Owens", "Video was very instructive, can't wait to make bread!");
+        Comment commentBread2 = new Comment("Hazel", "Bread time!");
+        Comment commentBread3 = new Comment("Brinley", "Can't wait to make dough!");
 
-        video1.AddComment(comment1);
-        video2.AddComment(comment2);
-        video3.AddComment(comment3);
-        video4.AddComment(comment4);
+        Comment commentVoice1 = new Comment("Billy Bob", "She has such an extraordinary voice!");
+        Comment commentVoice2 = new Comment("Bob Thornton", "Best voice I've heard in ages!");
+        Comment commentVoice3 = new Comment("Jim Stix", "Wish I could hear this every day!");
+
+        Comment commentShelf1 = new Comment("Bob's Basement", "I think I could make a much better shelf in my basement!");
+        Comment commentShelf2 = new Comment("Larry's Ladders", "Need a shelf like this!");
+        Comment commentShelf3 = new Comment("Tim's Tools", "This shelf will hold all my tools!");
+
+        Comment commentMTG1 = new Comment("MTG Nerd", "Can't wait to get this set, it looks so cool!");
+        Comment commentMTG2 = new Comment("JaxStax", "My play group is going to love this!");
+        Comment commentMTG3 = new Comment("River Strixhaven", "Has some amazing synergies!");
+
+        video1.AddComment(commentBread1);
+        video1.AddComment(commentBread2);
+        video1.AddComment(commentBread3);
+
+        video2.AddComment(commentVoice1);
+        video2.AddComment(commentVoice2);
+        video2.AddComment(commentVoice3);
+
+        video3.AddComment(commentShelf1);
+        video3.AddComment(commentShelf2);
+        video3.AddComment(commentShelf3);
+
+        video4.AddComment(commentMTG1);
+        video4.AddComment(commentMTG2);
+        video4.AddComment(commentMTG3);
         
         Console.Clear();
 
