@@ -8,11 +8,24 @@ using System;
 public class Customer
 {
     private string _name;
-    private class Address;
+    private Address _address;
 
-    public void IsInUsa()
+    public Customer(string name, Address address)
     {
-        return;
+        _name = name;
+        _address = address;
+    }
+    public string GetName()
+    {
+        return _name;
+    }
+    public Address GetAddress()
+    {
+        return _address;
+    }
+    public bool IsInUSA()
+    {
+        return _address.IsUSA();
     }
 
 

@@ -11,11 +11,32 @@ public class Product
     private double _price;
     private double _quantity;
 
-    public int TotalCost()
+    public Product(string name, double productID, double price, double quantity)
+    {
+        _name = name;
+        _productID = productID;
+        _price = price;
+        _quantity = quantity;
+    }
+
+    public double CostOfSingleProduct()
     {
         return _price * _quantity;
     }
 
+    public string GetName()
+    {
+        return _name;
+    }
+    public double GetProductID()
+    {
+        return _productID;
+    }
+    public void Display()
+    {
+        Console.WriteLine($"Product: {_name}\nProduct ID: {_productID}\nProduct Price: ${_price} Dollars\nAmount purchased: {_quantity}");
+        Console.WriteLine($"Total Cost of product is: ${CostOfSingleProduct()}");
+    }
 
 
 

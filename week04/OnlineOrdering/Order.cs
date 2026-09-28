@@ -8,19 +8,59 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 
 public class Order
 {
-    private string _customer;
-    
+    private Customer _customer;
     private List<Product> _products = new List<Product>();
 
-    public double CostPlusShipping()
+    public Order(Customer customer)
     {
-        return;
+        _customer = customer;
+        _products = new List<Product>();
     }
 
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+    }
+    public double SumOfProducts()
+    {
+        double total = 0;
 
+        foreach (Product product in _products)
+        {
+            total += product.CostOfSingleProduct();
+        }
+        if (_customer.IsInUSA())
+        {
+            total += 5;
+        }
+        else
+        {
+            total += 35;
+        }
+        return total;
+    }
+
+    public string PackingLabel()
+    {
+        string label = "PACKING LABEL\n";
+        foreach (Product product in _products)
+        {
+            label += $"{product.GetName()} - {product.GetProductID()}\n";
+        }
+        return label;
+    }
+
+    public string ShippingLabel()
+    {
+        string label = "SHIPPING LABEL\n";
+        label += _customer.GetName() + "\n";
+        label += _customer.GetAddress().ReturnFullAddress();
+        return label;
+    }
 
 
 
