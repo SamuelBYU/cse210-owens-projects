@@ -1,0 +1,21 @@
+using System;
+
+public class Rectangle : Shapes
+{
+    private double _length;
+
+    private double _width;
+    
+    public Rectangle(double length, double width) : base("Blue")
+    {
+        _length = length;
+        _width = width;
+    }
+    public override double AreaOfShape()
+    {
+        return _length * _width;
+    }
+
+
+
+}
