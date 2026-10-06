@@ -6,7 +6,7 @@ public class Rectangle : Shapes
 
     private double _width;
     
-    public Rectangle(double length, double width) : base("Blue")
+    public Rectangle(double length, double width) : base("")
     {
         _length = length;
         _width = width;

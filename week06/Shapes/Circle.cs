@@ -6,7 +6,7 @@ public class Circle : Shapes
     private double _radius;
 
     
-    public Circle(double radius) : base("Green")
+    public Circle(double radius) : base("")
     {
         _radius = radius;
     }

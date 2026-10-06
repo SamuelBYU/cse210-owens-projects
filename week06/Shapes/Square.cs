@@ -5,7 +5,7 @@ public class Square : Shapes
     
     private double _side;
 
-    public Square(double side) : base("Red")
+    public Square(double side) : base("")
     {
         _side = side;
     }
