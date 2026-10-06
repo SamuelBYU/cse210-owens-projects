@@ -26,16 +26,26 @@ class Program
 
         foreach(Shapes shape in _shapes)
         {
-            Console.WriteLine($"The color is: {shape}");
+            if (shape == square)
+            {
+               double area = shape.AreaOfShape();
+               Console.WriteLine($"The square is {square.GetColor()}, and the area of this shape is: {area}");
+            }
+            else if (shape == rectangle)
+            {
+               double area = shape.AreaOfShape();
+               Console.WriteLine($"The rectangle is {rectangle.GetColor()}, and the area of this shape is: {area}");
+            }
+            else if (shape == circle)
+            {
+               double area = shape.AreaOfShape();
+               Console.WriteLine($"The circle is {circle.GetColor()}, and the area of this shape is: {area}");
+            }
+            
         }
-        public static void DisplayShapeInformation(Shapes shapes)
-        {
-            Console.WriteLine($"{shapes.GetColor()}");
-        }
-        
-        // Console.WriteLine($"The color is: {square.GetColor()} and the area of the shape is: {square.AreaOfShape()}");
-        // Console.WriteLine($"The color is: {rectangle.GetColor()} and the area of the shape is: {rectangle.AreaOfShape()}");
-        // Console.WriteLine($"The color is: {circle.GetColor()} and the area of the shape is: {circle.AreaOfShape()}");
+    
 
     }
 }
+
+
