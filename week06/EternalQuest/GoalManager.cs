@@ -6,6 +6,7 @@ public class GoalManager
 
     private int _score;
 
+    
     public GoalManager(List<Goal> goals)
     {
         _score = 0;
