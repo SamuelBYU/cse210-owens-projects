@@ -11,6 +11,6 @@ class Program
 
         EternalGoal eternalGoal = new EternalGoal();
 
-        ChecklistGoal checklistGoal = new ChecklistGoal();
+        ChecklistGoal checklistGoal = new ChecklistGoal(3, 500);
     }
 }

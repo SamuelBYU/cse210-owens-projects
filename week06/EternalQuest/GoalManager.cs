@@ -1,5 +1,8 @@
 using System;
 
+using System.IO;
+
+
 public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
@@ -27,30 +30,46 @@ public class GoalManager
             Console.WriteLine("6. Quit");
 
             Console.Write("Please select an option from the menu: ");
-            string userResponse = Console.ReadLine();
-            int choice = int.Parse(userResponse);
+            string userResponse1 = Console.ReadLine();
+            int choice1 = int.Parse(userResponse1);
 
-            if (choice == 1)
+            if (choice1 == 1)
+            {
+                SimpleGoal simpleGoal = new SimpleGoal();
+                Console.WriteLine("The types of goals are:\n1. Simple Goals\n2. Eternal Goals\n3. Checklist Goals");
+                Console.Write("Which type of goal would you like to create?: ");
+                string userResponse2 = Console.ReadLine();
+                int choice2 = int.Parse(userResponse2);
+                if (choice2 == 1)
+                {
+                    simpleGoal.RecordEvent();
+                }
+                else if (choice2 == 2)
+                {
+                    
+                }
+                else if (choice2 == 3)
+                {
+                    
+                }
+            }
+            else if (choice1 == 2)
             {
                 
             }
-            else if (choice == 2)
+            else if (choice1 == 3)
             {
                 
             }
-            else if (choice == 3)
+            else if (choice1 == 4)
             {
                 
             }
-            else if (choice == 4)
+            else if (choice1 == 5)
             {
                 
             }
-            else if (choice == 5)
-            {
-                
-            }
-            else if (choice == 6)
+            else if (choice1 == 6)
             {
                 Console.WriteLine("Have a great day!");
                 break;
