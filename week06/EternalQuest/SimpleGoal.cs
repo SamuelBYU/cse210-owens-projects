@@ -4,34 +4,33 @@ public class SimpleGoal : Goal
 {
     private bool _isComplete;
 
-    public SimpleGoal() : base("", "", 0)
+    public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
         _isComplete = false;
+    }
+    public SimpleGoal(string name, string description, int points, bool isComplete) : base(name, description, points)
+    {
+        _isComplete = isComplete;
     }
 
     public override void RecordEvent()//Will mark goal complete [X] and assign the point value to the total score.
     {
-        Console.Write("What is the name of your goal?: ");
-        string simpleResponse1 = Console.ReadLine();
-        
-        
-
-        Console.Write("What is a short description of it?: ");
-        Console.ReadLine();
-        
-
-        Console.Write("What is the amount of points associated with this goal?: ");
-        string simpleResponse = Console.ReadLine();
-        int simpleChoice = int.Parse(simpleResponse);
+       if (!_isComplete)
+        {
+       _isComplete = true;
+            
+        }
+        GetPoints();
     }
 
     public override bool IsComplete()
     {
-        return true;
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        
+        return $"Simple Goal | {GetName()} | {GetDescription()} | {GetPoints()} {_isComplete}";
     }
 }

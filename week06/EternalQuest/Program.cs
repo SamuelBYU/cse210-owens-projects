@@ -4,13 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        GoalManager goalManager = new GoalManager(new List<Goal>());
+        GoalManager goalManager = new GoalManager();
         goalManager.Start();
 
-        SimpleGoal simpleGoal = new SimpleGoal();
-
-        EternalGoal eternalGoal = new EternalGoal();
-
-        ChecklistGoal checklistGoal = new ChecklistGoal(3, 500);
+        
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 public class EternalGoal : Goal
 {
-    public EternalGoal() : base("", "", 0)
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
         
     }
@@ -14,11 +14,11 @@ public class EternalGoal : Goal
 
     public override bool IsComplete()
     {
-        return true;
+        return false;
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"Eternal Goal | {GetName()} | {GetDescription()} | {GetPoints()}";
     }
 }

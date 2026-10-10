@@ -1,5 +1,6 @@
 using System;
 
+
 public abstract class Goal
 {
     private string _shortName;
@@ -13,13 +14,31 @@ public abstract class Goal
         _points = points;
     }
 
+    public string GetName()
+    {
+        return _shortName;
+    }
+    public string GetDescription()
+    {
+        return _description;
+    }
+    public int GetPoints()
+    {
+        return _points;
+    }
+
     public abstract void RecordEvent();
 
     public abstract bool IsComplete();
 
     public virtual string GetDetailsString()
     {
-        return "";
+        string checkbox = "[ ]";
+        if (IsComplete())
+        {
+            checkbox = "[X]";
+        }
+        return $"{checkbox} {_shortName} | {_description} | {_points}";
     }
 
     public abstract string GetStringRepresentation();
