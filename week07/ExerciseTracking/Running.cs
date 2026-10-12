@@ -25,4 +25,9 @@ public class Running : Activity
     {
         return 0;
     }
+
+    public override string Summary()
+    {
+        return "";
+    }
 }

@@ -1,5 +1,6 @@
 using System;
 
+
 public class Cycling : Activity
 {
     private int _speed;
@@ -26,5 +27,8 @@ public class Cycling : Activity
         return 0;
     }
 
-    public virtual void Summary();
+    public override string Summary()
+    {
+       return "";
+    }
 }

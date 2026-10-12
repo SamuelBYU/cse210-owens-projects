@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 public abstract class Activity
 {
-    private int _date;
+    protected int _date;
 
-    private int _duration;//Length of the activity in minutes.
+    protected int _duration;//Length of the activity in minutes.
 
     public Activity(int date, int duration)
     {
@@ -21,7 +21,7 @@ public abstract class Activity
 
     public abstract int CalculatePace();
     
-    public abstract void Summary();
+    public abstract string Summary();
 
 
 

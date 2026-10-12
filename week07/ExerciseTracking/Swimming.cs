@@ -25,4 +25,9 @@ public class Swimming : Activity
     {
         return 0;
     }
+
+    public override string Summary()
+    {
+        return "";
+    }
 }
