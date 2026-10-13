@@ -31,7 +31,8 @@ public class Cycling : Activity
     {
        string tempString = _date.ToString();
        DateTime parsedDate = DateTime.ParseExact(tempString, "yyyyMMdd", CultureInfo.InvariantCulture);
-       string finalDateString = parsedDate.ToString(" MMMM dd, yyyy", CultureInfo.InvariantCulture);
-       return Console.WriteLine($"{finalDateString}");
+       string finalDateString = parsedDate.ToString(" dd MMM yyyy", CultureInfo.InvariantCulture);
+       
+       return $"{finalDateString}";
     }
 }

@@ -8,13 +8,13 @@ class Program
 
         
         
-        Cycling cycling = new Cycling(5, 03/01/1993, 60);
-        cycling.Summary();
+        Cycling cycling = new Cycling(5, 19930301, 60);
+        Console.WriteLine(cycling.Summary());
 
-        Running running = new Running(4, 10/13/2023, 120);
-        running.Summary();
+        Running running = new Running(4, 20231013, 120);
+        Console.WriteLine(running.Summary());
 
-        Swimming swimming = new Swimming(8, 12/31/2019, 45);
-        swimming.Summary();
+        Swimming swimming = new Swimming(8, 20191231, 45);
+        Console.WriteLine(swimming.Summary());
     }
 }

@@ -1,5 +1,7 @@
 using System;
 
+using System.Globalization;
+
 public class Swimming : Activity
 {
     private int _laps;//Length of a lap in the lap pool is 50 meters.
@@ -28,6 +30,10 @@ public class Swimming : Activity
 
     public override string Summary()
     {
-        return "";
+       string tempString = _date.ToString();
+       DateTime parsedDate = DateTime.ParseExact(tempString, "yyyyMMdd", CultureInfo.InvariantCulture);
+       string finalDateString = parsedDate.ToString(" dd MMM yyyy", CultureInfo.InvariantCulture);
+       
+       return $"{finalDateString}";
     }
 }
