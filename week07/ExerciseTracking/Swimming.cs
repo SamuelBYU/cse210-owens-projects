@@ -2,7 +2,7 @@ using System;
 
 public class Swimming : Activity
 {
-    private int _laps;
+    private int _laps;//Length of a lap in the lap pool is 50 meters.
 
     public Swimming(int laps, int date, int duration) : base(date, duration)
     {

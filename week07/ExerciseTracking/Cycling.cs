@@ -1,6 +1,6 @@
 using System;
 
-
+using System.Globalization;
 public class Cycling : Activity
 {
     private int _speed;
@@ -29,6 +29,9 @@ public class Cycling : Activity
 
     public override string Summary()
     {
-       return "";
+       string tempString = _date.ToString();
+       DateTime parsedDate = DateTime.ParseExact(tempString, "yyyyMMdd", CultureInfo.InvariantCulture);
+       string finalDateString = parsedDate.ToString(" MMMM dd, yyyy", CultureInfo.InvariantCulture);
+       return Console.WriteLine($"{finalDateString}");
     }
 }
