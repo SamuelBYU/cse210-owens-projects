@@ -5,21 +5,27 @@ public abstract class Activity
 {
     protected int _date;
 
-    protected int _duration;//Length of the activity in minutes.
+    protected double _duration;//Length of the activity in minutes.
 
-    public Activity(int date, int duration)
+    public Activity(int date, double duration)
     {
         _date = date;
         _duration = duration;
     }
 
-    public abstract int CalculateDistance();
+    public virtual double CalculateDistance()
+    {
+        return 0;
+    }
    
 
-    public abstract int CalculateSpeed();
+    public virtual double CalculateSpeed()
+    {
+        return 0;
+    }
    
 
-    public abstract int CalculatePace();
+    public abstract double CalculatePace();
     
     public abstract string Summary();
 

@@ -4,17 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-
-        
-        
-        Cycling cycling = new Cycling(5, 19930301, 60);
+        Console.Clear();
+        Cycling cycling = new Cycling(5.0, 19930301, 60);
         Console.WriteLine(cycling.Summary());
 
-        Running running = new Running(4, 20231013, 120);
+        Running running = new Running(4.0, 20231013, 120);
         Console.WriteLine(running.Summary());
 
-        Swimming swimming = new Swimming(8, 20191231, 45);
+        Swimming swimming = new Swimming(15.0, 20191231, 45);
         Console.WriteLine(swimming.Summary());
+       
     }
 }

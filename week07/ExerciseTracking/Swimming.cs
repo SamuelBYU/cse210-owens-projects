@@ -4,28 +4,29 @@ using System.Globalization;
 
 public class Swimming : Activity
 {
-    private int _laps;//Length of a lap in the lap pool is 50 meters.
+    private double _laps;//Length of a lap in the lap pool is 50 meters.
 
-    public Swimming(int laps, int date, int duration) : base(date, duration)
+    public Swimming(double laps, int date, double duration) : base(date, duration)
     {
         _laps = laps;
     }
 
-    public override int CalculateDistance()
+    public override double CalculateDistance()
     {
-        return 0;
+        double distance = _laps * 50 / 1000 * 0.62;
+        return distance;
     }
    
 
-    public override int CalculateSpeed()
+    public override double CalculateSpeed()
     {
-        return 0;
+        return (CalculateDistance() / _duration) * 60;
     }
    
 
-    public override int CalculatePace()
+    public override double CalculatePace()
     {
-        return 0;
+        return _duration / CalculateDistance();
     }
 
     public override string Summary()
@@ -34,6 +35,7 @@ public class Swimming : Activity
        DateTime parsedDate = DateTime.ParseExact(tempString, "yyyyMMdd", CultureInfo.InvariantCulture);
        string finalDateString = parsedDate.ToString(" dd MMM yyyy", CultureInfo.InvariantCulture);
        
-       return $"{finalDateString}";
+       return $"{finalDateString} Running ({_duration} min) - Distance {CalculateDistance():F1} miles, Speed {CalculateSpeed():F1} mph, Pace: {CalculatePace():F1} min per mile";
+       
     }
 }

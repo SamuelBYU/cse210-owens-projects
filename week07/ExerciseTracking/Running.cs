@@ -4,28 +4,25 @@ using System.Globalization;
 
 public class Running : Activity
 {
-    private int _distance;
+    private double _distance;
 
-    public Running(int distance, int date, int duration) : base(date, duration)
+    public Running(double distance, int date, double duration) : base(date, duration)
     {
         _distance = distance;
     }
 
-    public override int CalculateDistance()
+    
+   
+
+    public override double CalculateSpeed()
     {
-        return 0;
+        return (_distance / _duration) * 60;
     }
    
 
-    public override int CalculateSpeed()
+    public override double CalculatePace()
     {
-        return 0;
-    }
-   
-
-    public override int CalculatePace()
-    {
-        return 0;
+        return _duration / _distance;
     }
 
     public override string Summary()
@@ -34,6 +31,6 @@ public class Running : Activity
        DateTime parsedDate = DateTime.ParseExact(tempString, "yyyyMMdd", CultureInfo.InvariantCulture);
        string finalDateString = parsedDate.ToString(" dd MMM yyyy", CultureInfo.InvariantCulture);
        
-       return $"{finalDateString}";
+       return $"{finalDateString} Running ({_duration} min) - Distance {_distance:F1} miles, Speed {CalculateSpeed():F1} mph, Pace: {CalculatePace():F1} min per mile";
     }
 }
